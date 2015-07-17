@@ -1,0 +1,129 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap-css-only/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="app">
+
+
+    <!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div class="header" ng-cloak>
+      <!-- Common Nav Bar for Public web site and Private Web app -->
+      <nav class="navbar navbar-inverse" role="navigation" class="NavCtrl" ng-controller="NavCtrl">
+        <div>
+          <div class="navbar-header">
+            <button ng-show="$state.current.name!='login' && $state.current.name!=''" type="button" class="navbar-toggle" ng-init="navCollapsed = true"
+                    ng-click="navCollapsed = !navCollapsed">
+              <span class="sr-only"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand"><h4>Review App</h4> </a>
+          </div>
+          <div class="navbar-collapse collapse" ng-class="!navCollapsed && 'in'">
+            <ul class="nav navbar-nav navbar-left">
+              <li>
+                <a ng-click="navCollapsed = true" ui-sref="home">
+                  <div class="glyphicon-class text-center"><i class="fa fa-home"></i> Home</div>
+                </a>
+              </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+              <li ng-show = "$state.current.name == 'public'">
+                <a ng-click="navCollapsed = true"  class="login" ng-controller="LoginCtrl">
+
+                  <div class="text-center" ng-click="login()">Sign In <i class="fa fa-sign-in"></i></div>
+                </a>
+              </li>
+              <li ng-show = " $state.current.name != 'public'">
+                <a ng-click="navCollapsed = true" class="logout" ng-controller="LogoutCtrl">
+                  <div class="glyphicon-class text-center" ng-click="logout()">Sign Out <i class="fa fa-sign-in"></i></div>
+                </a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div ui-view class="main-view-bottom-buffer"></div>
+
+    <div class="container-fluid">
+      <div class="footer navbar-inverse navbar-fixed-bottom text-center white-text">
+        <p>
+
+          <a class="white-hyperlink" target="_blank" href="http://www.synerzip.com"> Synerzip </a>
+        </p>
+      </div>
+    </div>
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-ui-router-breadcrumbs/dist/angular-ui-router-breadcrumbs.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/ngSmoothScroll/angular-smooth-scroll.js"></script>
+    <script src="bower_components/ng-jsonpath/dist/ng-jsonpath.js"></script>
+    <script src="bower_components/ngstorage/ngStorage.js"></script>
+    <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="modules/app.js"></script>
+
+    <script src="modules/nav/nav.module.js"></script>
+    <script src="modules/nav/controllers/nav.js"></script>
+
+
+    <script src="modules/login/login.module.js"></script>
+    <script src="modules/login/controllers/login.js"></script>
+    <script src="modules/login/controllers/logout.js"></script>
+
+    <script src="modules/home/home.module.js"></script>
+    <script src="modules/home/controllers/home.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

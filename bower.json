@@ -1,0 +1,28 @@
+{
+  "name": "review-proto",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "^1.3.5",
+    "angular-animate": "^1.3.0",
+    "angular-cookies": "^1.3.0",
+    "angular-resource": "^1.3.0",
+    "angular-route": "^1.3.0",
+    "angular-sanitize": "^1.3.0",
+    "angular-touch": "^1.3.0",
+    "bootstrap-css-only": "^3.3.4",
+    "components-font-awesome": "~4.3.0",
+    "angular-ui-router": "~0.2.14",
+    "angular-ui-router-breadcrumbs": "~0.0.2",
+    "angular-bootstrap": "~0.13.0",
+    "ngSmoothScroll": "~1.7.1",
+    "ng-jsonpath": "~0.1.3",
+    "ngstorage": "~0.3.4",
+    "angular-loading-bar": "~0.6.0",
+    "angularfire": "~1.1.2"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.3.0"
+  },
+  "appPath": "app",
+  "moduleName": "reviewProtoApp"
+}
